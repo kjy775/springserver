@@ -12,7 +12,7 @@ RUN chomod +x gradlew && ./gradlew dependencies --no-daemon || return 0
 # 나머지 소스 복사
 COPY . .
 
-RUN chomod +x gradlew
+RUN chmod +x gradlew
 
 # 실제 빌드 (테스트 스킵하고 싶으면 -x test 추가)
 RUN ./gradlew clean build -x test
